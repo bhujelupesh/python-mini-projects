@@ -1,7 +1,9 @@
 import numpy as np
 import functions
 
-board = np.zeros((3,3))
+board_structure = np.zeros((3,3))
+board_structure = board_structure.astype(int)
+board = board_structure.astype(str)
 
 def print_board(board):
     for i in range (3):
@@ -17,8 +19,8 @@ print("2. Two Player...")
 choice = int(input("Enter your choice : "))
 
 if choice == 1:
-    print("1 = User")
-    print("2 = Computer")
+    print("x = User")
+    print("o = Computer")
 
     print(print_board(board))
     for i in range(5):
