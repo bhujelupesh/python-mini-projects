@@ -6,8 +6,9 @@ def user_input(board):
     row = int(input("Enter the row value (0-2): "))
     column = int(input("Enter the column value (0-2): "))
     check_value = board[row,column]
-    if check_value == 0:
-        board[row,column] = 'x'
+    if check_value != 'x'or check_value != 'o':
+        value = 'x'
+        board[row,column] = value
     else:
         print("Already filled")
         user_input(board)
@@ -18,7 +19,7 @@ def user_input2(board):
     row = int(input("Enter the row value (0-2): "))
     column = int(input("Enter the column value (0-2): "))
     check_value = board[row,column]
-    if check_value == 0:
+    if check_value != 'x' or check_value != 'o':
         board[row,column] = 'o'
     else:
         print("Already filled")
@@ -28,7 +29,7 @@ def user_input2(board):
 def computer_choice(board):
     row = random.randint(0,2)
     column = random.randint(0,2)
-    if board[row,column] == 0:
+    if board[row,column] != 'x' or board[row,column] != 'o':
         board[row,column] = 'o'
     else:
         computer_choice(board)
